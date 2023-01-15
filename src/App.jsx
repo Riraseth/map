@@ -106,9 +106,10 @@ function App() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {results.map(
-            (result) =>
+            (result, index) =>
               result.coordinates && (
                 <Marker
+                  key={index}
                   position={result.coordinates ? result.coordinates : position}
                 >
                   <Popup>{result.note}</Popup>
